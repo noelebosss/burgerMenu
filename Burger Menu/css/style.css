@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    background: rgb(34, 69, 195);
+    background: linear-gradient(0deg, rgba(34, 69, 195, 1) 0%, rgba(125, 228, 227, 1) 100%);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#button-burger {
+    height: 100px;
+    width: 100px;
+    background-color: rgb(26, 26, 26);
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.562);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none
+}
+
+#button-burger:disabled {
+    background-color: rgb(65, 65, 65);
+    cursor: not-allowed;
+}
+
+.burger-line {
+    width: 70px;
+    height: 10px;
+    position: absolute;
+    border-radius: 20px;
+    transition-duration: .2s;
+}
+
+.burger-line-1-activate {
+    transform: translateY(-20px);
+}
+
+.burger-line-3-activate {
+    transform: translateY(20px);
+}
+
+#button-burger:hover:not(#button-burger:disabled) .burger-line-1-activate {
+    transform: translateY(-25px);
+}
+
+#button-burger:hover:not(#button-burger:disabled) .burger-line-2-activate {
+    width: 60px;
+}
+
+#button-burger:hover:not(#button-burger:disabled) .burger-line-3-activate {
+    transform: translateY(25px);
+}
+
+
+/*Delete */
+
+.burger-line-1-delete {
+    transform: rotate(45deg);
+}
+
+.burger-line-2-delete {
+    display: none;
+}
+
+.burger-line-3-delete {
+    transform: rotate(-45deg);
+}
+
+#button-burger:hover:not(.delete) .burger-line-1-delete {
+    width: 80px;
+}
+
+#button-burger:hover:not(.delete) .burger-line-3-delete {
+    width: 80px;
+}
+
+
+/* Activation de l'annimation */
+
+.delete {
+    background: white;
+}
+
+.activation {
+    background: rgb(175, 175, 175);
+}

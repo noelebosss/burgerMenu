@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <script>
+        function burgerSet(parent, i, response) {
+            for (var a = 0; a < parent.children.length; a++) {
+                i++;
+                var element = parent.children[a];
+                var ajoute = "burger-line-" + i + "-activate";
+                var remove = "burger-line-" + i + "-delete";
+                (response === "set") ? element.classList.add(remove, "activation") + element.classList.remove(ajoute, "delete") 
+                : element.classList.add(ajoute, "delete") + element.classList.remove(remove, "activation");
+            }
+            (response === "set") ? parent.setAttribute('onclick', "burgerSet(this, 0, 'unset');"):parent.setAttribute('onclick', "burgerSet(this, 0, 'set');");
+        }
+    </script>
+</head>
+        
+<body>
+    <section>
+        <button id="button-burger" onclick="burgerSet(this, 0, 'set');">
+            <div class="burger-line delete burger-line-1-activate"></div>
+            <div class="burger-line delete burger-line-2-activate"></div>
+            <div class="burger-line delete burger-line-3-activate"></div>
+        </button>
+    </section>
+</body>
+
+</html>
